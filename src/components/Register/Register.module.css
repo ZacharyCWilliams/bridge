@@ -182,3 +182,7 @@
   margin: 0px;
   border-top: 1px solid rgb(255, 255, 255, 30%);
 }
+
+.exitBtnLink {
+  display: flex;
+}

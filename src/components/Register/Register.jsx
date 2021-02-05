@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import DraftsTwoToneIcon from '@material-ui/icons/DraftsTwoTone';
 import LockTwoToneIcon from '@material-ui/icons/LockTwoTone';
 import ClearTwoToneIcon from '@material-ui/icons/ClearTwoTone';
+import PersonOutlineTwoToneIcon from '@material-ui/icons/PersonOutlineTwoTone';
 
 function Register(props) {
 
@@ -31,7 +32,7 @@ function Register(props) {
     <div className={styles.modalBackground}>
       <div className={styles.signUpContainer}>
         <div className={styles.exitBtn}>
-          <Link to="/">
+          <Link className={styles.exitBtnLink} to="/">
             <ClearTwoToneIcon />
           </Link>
         </div>
@@ -48,7 +49,7 @@ function Register(props) {
           <form className={styles.registerForm} onSubmit={registerUser}>
             <div className={styles.inputWrapper}>
               <label className={styles.formInputLabel}>
-                <DraftsTwoToneIcon />
+                <PersonOutlineTwoToneIcon />
               </label>
               <input className={styles.registerInput} onChange={e => setName(e.target.value)} type="text" placeholder="Full Name" />
             </div>
