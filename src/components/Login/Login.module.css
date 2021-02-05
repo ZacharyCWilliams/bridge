@@ -1,4 +1,4 @@
-.loginWrapper {
+.modalBackground {
   display: flex;
   position: fixed;
   top: 0px;
@@ -7,10 +7,13 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(20px) saturate(100%);
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
   z-index: 10;
   padding: 0px 20px;
+  animation: 1s ease 0s 1 normal forwards running 'bDTdTe';
 }
 
 .loginContainer {
@@ -20,141 +23,167 @@
   padding: 20px;
   display: grid;
   grid-template-columns: 360px auto;
-  grid-gap: 20px;
   gap: 20px;
   justify-items: center;
   background: rgba(50, 61, 109, 0.5);
-  box-shadow: rgb(255 255 255 / 30%) 0px 0px 0px 0.5px inset;
+  box-shadow: rgb(255, 255, 255, 30%) 0px 0px 0px 0.5px inset;
   border-radius: 20px;
-  align-items: center;
+  opacity: 100%;
+  z-index: 50;
 }
 
-.moneyImage {
-  height: 350px;
-  border-radius: 20px;
+.exitBtn {
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  background-color: rgba(255,255,255,0.6);
+  height: 40px;
+  width: 40px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
+
+.exitBtn > a {
+  color: white;
+}
+
+
 
 .formWrapper {
+  display: grid;
+  -webkit-box-pack: start;
+  justify-content: start;
+  text-align: left;
+  gap: 20px;
+  max-width: 320px;
+  padding-top: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.loginImage {
+  background-color: steelblue;
+  border-radius: 25px;
   display: flex;
-  flex-direction: column;
+}
+
+.header {
+  color: white;
+  margin: 0px;
+}
+
+.tagline {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0px;
+}
+
+.loginWrapper {
+  display: grid;
+  -webkit-box-pack: start;
+  justify-content: start;
+  text-align: left;
+  gap: 20px;
+  max-width: 320px;
+  position: relative;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  height: 44px;
+}
+
+.formInputLabel {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .loginInput {
   height: 100%;
-  width: 300px;
+  width: 100%;
   background: linear-gradient(rgba(99, 106, 150, 0.4) 0%, rgba(182, 186, 214, 0.25) 100%);
   border: none;
   border-radius: 30px;
-  box-shadow: rgb(0 0 0 / 15%) 0px 20px 40px, rgb(255 255 255 / 30%) 0px 0px 0px 0.5px inset;
+  box-shadow: rgb(0, 0, 0, 15%) 0px 20px 40px, rgb(255, 255, 255, 30%) 0px 0px 0px 0.5px inset;
   box-sizing: border-box;
-  padding: 10px 42px 10px 60px;
+  padding: 10px 42px 10px 56px;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 130%;
   color: rgb(255, 255, 255);
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-  outline: none;
-  margin: 10px;
 }
 
 .loginInput:focus {
-  outline: none;
-  padding-left: 50px;
   box-shadow: rgb(47 184 255 / 30%) 0px 10px 40px, rgb(47 121 255) 0px 0px 0px 1px inset;
   background: linear-gradient(rgba(24, 32, 79, 0.4) 0%, rgba(24, 32, 79, 0.25) 100%);
-}
-
-.signInHeader {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-  margin: 0px;
-  line-height: 48px;
-  color: rgb(255, 255, 255);
-}
-
-.signInParagraph {
-  color: rgba(255, 255, 255, 0.7);
+  outline: none;
+  padding-left: 56px;
 }
 
 .loginBtn {
   background: linear-gradient(91.4deg, rgb(9 38 66) 0%, rgb(40 94 249) 100%);
   border: none;
   border-radius: 30px;
-  box-shadow: rgb(147, 231, 221, 30%) 0px 20px 40px;
+  box-shadow: rgb(147 231 221 / 30%) 0px 20px 40px;
   cursor: pointer;
   display: grid;
   text-align: center;
   padding: 12px 0px;
+  width: 100%;
   position: relative;
   -webkit-box-pack: center;
   justify-content: center;
+  margin-top: 0px;
   color: white;
-  font-weight: 800;
-  margin-top: 12px;
+  font-weight: 800; 
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .loginBtn:hover {
   transform: translateY(-2px);
-  box-shadow: rgb(0, 0, 0, 15%) 0px 20px 40px, rgb(0, 0, 0, 30%) 0px 0px 0px 0.5px inset, rgb(0, 0, 0, 10%) 0px 10px 40px inset;
+  box-shadow: rgb(0 0 0 / 15%) 0px 20px 40px, rgb(0 0 0 / 30%) 0px 0px 0px 0.5px inset, rgb(0 0 0 / 10%) 0px 10px 40px inset;
 }
 
-.loginEmailSvg {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  position: relative;
-  top: 48px;
-  left: 11px;
-  width: 35px;
-  height: 35px;
+.footerWrapper {
   display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  z-index: 1;
-  border: 1px solid rgb(47 121 255);
+  flex-direction: column;
+  padding-top: 5px;
+  border-top: 1px solid rgb(255, 255, 255, 30%);
 }
 
-.loginPasswordSvg {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  position: relative;
-  top: 48.5px;
-  left: 11px;
-  width: 35px;
-  height: 35px;
+.linkToRegisterParagraph {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  margin-right: 8px;
+  /* margin-bottom: 0px; */
+  font-size: 12px;
+}
+
+.linkToRegister {
+  color: rgb(40 94 249);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  /* margin-top: 10px; */
+}
+
+.flex {
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  z-index: 1;
-  border: 1px solid rgb(47 121 255);
-}
-
-/* has to be fixed to resize */
-
-.loginExit {
-  width: 40px;
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 40px;
-  z-index: 40;
-  position: fixed;
-  top: 123px;
-  left: 1042px;
-  place-content: center;
-  background: linear-gradient(360deg, rgba(99, 106, 150, 0.4) 0, rgba(182, 186, 214, 0.5) 100);
-  box-sizing: border-box;
-  box-shadow: rgb(0, 0, 0, 15%) 0px 20px 40px, rgb(255, 255, 255, 30%) 0px 0px 0px 0.5px inset;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.loginExit > svg {
-  position: fixed;
-  top: 132px;
-  left: 1050px;
-  color: white;
 }
