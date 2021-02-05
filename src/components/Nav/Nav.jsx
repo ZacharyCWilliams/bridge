@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./Nav.module.css";
-import logo from "../assets/logo.svg"
+import logo from "../../assets/logo.svg"
 import { Link } from "react-router-dom"
 import LibraryBooksTwoToneIcon from '@material-ui/icons/LibraryBooksTwoTone';
 import ImportContactsTwoToneIcon from '@material-ui/icons/ImportContactsTwoTone';
