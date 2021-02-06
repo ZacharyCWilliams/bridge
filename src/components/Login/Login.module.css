@@ -50,8 +50,6 @@
   color: white;
 }
 
-
-
 .formWrapper {
   display: grid;
   -webkit-box-pack: start;
@@ -65,7 +63,7 @@
 }
 
 .loginImage {
-  background-color: steelblue;
+  background-color: rgb(40 94 249);
   border-radius: 25px;
   display: flex;
 }

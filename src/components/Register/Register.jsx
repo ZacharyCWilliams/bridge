@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios"
 import styles from "./Register.module.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import DraftsTwoToneIcon from '@material-ui/icons/DraftsTwoTone';
 import LockTwoToneIcon from '@material-ui/icons/LockTwoTone';
 import ClearTwoToneIcon from '@material-ui/icons/ClearTwoTone';
@@ -12,6 +12,7 @@ function Register(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  let history = useHistory();
 
   const registerUser = async e => {
 
@@ -19,8 +20,10 @@ function Register(props) {
 
     try {
       const userData = await axios.post('/api/auth/register', { name: name, email: email, password: password })
-      console.log(userData)
-      return userData;
+      if (userData) {
+        await localStorage.setItem("user", JSON.stringify(userData));
+        history.push("/home");
+      };
     } catch(error) {
       console.log("There was an error")
       console.log(error)

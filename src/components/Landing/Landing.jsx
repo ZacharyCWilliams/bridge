@@ -1,10 +1,15 @@
 import React from 'react';
+import Nav from "../Nav/Nav";
+
 
 function Landing(props) {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Nav />
+      <div>
+        LANDING
+      </div>
+    </>
   );
 }
 

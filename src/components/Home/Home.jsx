@@ -1,8 +1,12 @@
 import React from 'react';
+import Logout from "../Logout/Logout";
 
 function Home() {
   return (
-    <h1>Dashboard</h1>
+    <>
+      <h1>Welcome to Home Dash</h1>
+      <Logout />
+    </>
   );
 }
 
